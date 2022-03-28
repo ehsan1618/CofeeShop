@@ -1,0 +1,35 @@
+
+    <h2>Cofee list</h2>          
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Blend Name</th>
+          <th>Origin</th>
+          <th>Variety</th>
+          <th>Action(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cofee of cofeeList | paginate
+                : {
+                              itemsPerPage: pageSize,
+                                          currentPage: page,
+                                                      totalItems: count
+                                                              };
+                                                                  let i = index">
+          <td>{{cofee.id}}</td>
+          <td>{{cofee.blend_name}}</td>
+          <td>{{cofee.origin}}</td>
+          <td>{{cofee.variety}}</td>
+          <td><a href="#" [routerLink]="['/cofee-detail/', cofee.id, 'CofeeDetail']" class="btn btn-info">View</a></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>

@@ -1,0 +1,15 @@
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 80px !important;
+    margin-bottom: 10px;
+}
+
+.center{
+    margin-left: 20%;
+}
+.item{
+    display: inline !important;
+    margin: 5%;
+}
+.btn{
+    margin-right: 10%;
+}
